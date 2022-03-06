@@ -12,6 +12,13 @@ module.exports = {
     mode: 'development',
     resolve:{
         extensions: ['.js', '.jsx'],
+        alias: {
+            '@components': path.resolve(__dirname, 'src/components/'),
+            '@containers': path.resolve(__dirname, 'src/containers/'),
+            '@styles': path.resolve(__dirname, 'src/styles/'),
+            '@icons': path.resolve(__dirname, 'src/assets/icons/'),
+            '@logos': path.resolve(__dirname, 'src/assets/logos/'),
+        }
     },
     module: {
         rules:[
@@ -21,6 +28,10 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                 }
+            },
+            {
+                test: /\.(png|jpg|gif|svg)$/,
+                type: 'asset'
             },
             {
                 test: /\.html$/,
