@@ -18,6 +18,7 @@ const App = () => {
 		<BrowserRouter>
 			<Layout>
 				<Routes>
+					<Route exact path="/" component={Home} />
 					<Route exact path="/login" component={Login} />
 					<Route exact path="/password-recovery" component={PasswordRecovery} />
 					<Route exact path="/send-email" component={SendEmail} />
@@ -27,7 +28,6 @@ const App = () => {
 					<Route exact path="/checkout" component={Checkout} />
 					<Route exact path="/orders" component={Orders} />
 					<Route path="*" component={NotFound} />
-					<Route exact path="/" component={Home} />
 				</Routes>
 			</Layout>
 		</BrowserRouter>
